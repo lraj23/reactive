@@ -1,103 +1,59 @@
-import Image from "next/image";
+import Link from "@/components/Links";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	return (
+		< div id="mainDiv" >
+			<div id="intro">
+				<p className="powerful">Chess ECO: Your Openings Catalogue</p>
+				Learn openings with this comprehensive list!
+			</div>
+			<div id="links">
+				<Link href="ECO-AXX" index="1" total="5" >Openings with ECO starting with A</Link>
+				<Link href="ECO-BXX" index="2" total="5" >Openings with ECO starting with B</Link>
+				<Link href="ECO-CXX" index="3" total="5" >Openings with ECO starting with C</Link>
+				<Link href="ECO-DXX" index="4" total="5" >Openings with ECO starting with D</Link>
+				<Link href="ECO-EXX" index="5" total="5" >Openings with ECO starting with E</Link>
+			</div>
+		</div >
+	);
 }
+
+// TESTS OF MyComponent, MyList, AND MyTitle
+// import MyComponent from "@/components/MyComponent";
+// import MyList from "@/components/MyList";
+// import MyTitle from "@/components/MyTitle";
+// const food = [
+// 	{ title: "Cabbage", id: 1 },
+// 	{ title: "Garlic", id: 2 },
+// 	{ title: "Apple", id: 3 }
+// ];
+// const electronics = [
+// 	{ title: "Laptop", id: 1 },
+// 	{ title: "Headphones", id: 2 },
+// 	{ title: "Mechanical keyboard", id: 3 }
+// ];
+
+// NESTED COMPONENTS WITH A PRODUCTS LIST
+// import Child from "@/components/Child";
+// const products = {
+// 	"Grocery": [
+// 		{ "name": "Apple", "id": 1201, "price": 0.99 },
+// 		{ "name": "Banana", "id": 1202, "price": 0.79 },
+// 		{ "name": "Capsicum", "id": 1203, "price": 1.39 },
+// 	],
+// 	"Tech": [
+// 		{ "name": "Dell ADVANCED LAPTOP", "id": 1204, "price": 699.99 },
+// 		{ "name": "Extra Special Watch", "id": 1205, "price": 499.99 },
+// 		{ "name": "Flash Drive - 16TB", "id": 1206, "price": 149.99 }
+// 	],
+// 	"Clothes": [
+// 		{ "name": "Gloves", "id": 1207, "price": 13.99 },
+// 		{ "name": "Hat", "id": 1208, "price": 24.99 },
+// 		{ "name": "iPhone 26 Pro Max", "id": 1209, "price": 1299.99, "isMisplaced": true }
+// 	],
+// 	"School Supplies": [
+// 		{ "name": "JetBrains Pencil (not a scam)", "id": 1210, "price": 29.99 },
+// 		{ "name": "Krayola EXTRA-CHEAP Crayons - 96 pack (not a scam)", "id": 1211, "price": 0.99 },
+// 		{ "name": "Lavith's SECRET item", "id": 1212, "price": -999.99 }
+// 	]
+// };
