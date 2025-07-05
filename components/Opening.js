@@ -1,9 +1,8 @@
 export default function Opening({ info }) {
-	// console.log(info);
 	return (
-		<div className="listItem">
-			<p className="openingName">{info.name} ({info.eco}) <span className="failure">(Not Available Yet)</span></p>
+		<a href={"/ECO-" + info.eco[0] + "XX/" + encodeURIComponent(info.moves)} className="listItem">
+			<p className="openingName">{info.name} ({info.eco})</p>
 			<p className="openingMoves">{info.moves}</p>
-		</div>
+		</a>
 	);
 }

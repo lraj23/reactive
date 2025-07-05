@@ -6,14 +6,18 @@ export default function Board({ fen }) {
 	for (let i = 0; i < 8; i++) {
 		squares[i] = [];
 		for (let j = 0; j < 8; j++) {
-			if (parsedFen[i][j] !== "1") {
+			let fenChar = parsedFen[i][j];
+			if (fenChar !== "1") {
 				squares[i][j] = (
-					<Square color={(i + j)} key={8 * i + j}><img src={"/chess_pieces/" + (parsedFen[i][j].toUpperCase() === parsedFen[i][j] ? "w" : "b") + parsedFen[i][j].toLowerCase() + ".png"} /></Square>
+					<Square color={(i + j)} key={8 * i + j}><img src={"/chess_pieces/" + (fenChar.toUpperCase() === fenChar ? "w" : "b") + fenChar.toLowerCase() + ".png"} /></Square>
 				);
 			} else squares[i][j] = (
 				<Square color={(i + j)} key={8 * i + j}></Square>
 			);
 		}
+		squares[i].push(
+			<br key={"br"+i} />
+		);
 	}
 	return (
 		<div id="board">{squares}</div>
