@@ -11,7 +11,7 @@ export default async function ECO({ letter }) {
 				<p className="powerful">ECO codes starting with {letter}</p>
 				Access information about every opening with an ECO code like {letter}XX.
 			</div>
-			<br/>
+			<br />
 			<a href="/" className="navFromCategory">Return Home</a>
 			<List data={category} />
 		</div>
