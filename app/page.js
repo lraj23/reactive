@@ -1,10 +1,9 @@
+import Intro from "@/components/Intro";
+
 export default function Home() {
 	return (
 		< div id="mainDiv" >
-			<div id="intro">
-				<p className="powerful">Chess ECO: Your Openings Catalogue</p>
-				Learn openings with this comprehensive list!
-			</div>
+			<Intro desc="Learn openings with this comprehensive list!">Chess ECO: Your Openings Catalogue</Intro>
 			<div id="links">
 				<a className="link" href="A">Openings with ECO starting with A</a>
 				<a className="link" href="B">Openings with ECO starting with B</a>

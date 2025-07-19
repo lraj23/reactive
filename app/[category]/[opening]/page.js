@@ -1,14 +1,12 @@
 import Board from "@/components/Board";
+import Intro from "@/components/Intro";
 
 export default async function OpeningPage({ params }) {
 	var { category, opening } = await params;
 	if (!"ABCDE".split("").includes(category))
 		return (
 			<div id="mainDiv">
-				<div id="intro">
-					<p className="powerful">This isn't a category...</p>
-					The opening may be valid, the category is wrong...
-				</div>
+				<Intro desc="The opening may be valid, the category is wrong...">This isn't a category...</Intro>
 				<a href="/" className="navFromOpening">Return Home</a>
 			</div>
 		);
@@ -28,19 +26,14 @@ export default async function OpeningPage({ params }) {
 	if (ECO_info === undefined || ECO_FEN === undefined)
 		return (
 			<div id="mainDiv">
-				<div id="intro">
-					<p className="powerful">This isn't an opening...</p>
-				</div>
+				<Intro>This isn't an opening...</Intro>
 				<a href="/" className="navFromOpening">Return Home</a>
 			</div>
 		);
 
 	return (
 		<div id="mainDiv">
-			<div id="intro">
-				<p className="powerful">{ECO_info.name} ({ECO_info.eco})</p>
-				{ECO_info.moves}
-			</div>
+			<Intro desc={ECO_info.moves}>{ECO_info.name} ({ECO_info.eco})</Intro>
 			<Board fen={ECO_FEN} />
 			<a href="/" className="navFromOpening">Return Home</a>
 			<a href={"/" + category} className="navFromOpening right">Return to {category}XX</a>

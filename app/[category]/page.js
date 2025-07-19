@@ -1,21 +1,16 @@
 import ECO from "@/components/ECO";
+import Intro from "@/components/Intro";
 
 export default async function CategoryPage({ params }) {
 	const { category } = await params;
-	if (!"ABCDE".split("").includes(category))
-		return (
-			<div id="mainDiv">
-				<div id="intro">
-					<p className="powerful">This isn't a category...</p>
-				</div>
-				<a href="/" className="navFromOpening">Return Home</a>
-			</div>
-		);
+	if (!"ABCDE".split("").includes(category)) return (
+		<div id="mainDiv">
+			<Intro desc="">This isn't a category...</Intro>
+			<a href="/" className="navFromOpening">Return Home</a>
+		</div>
+	);
 
 	return (
-		<>
-			<ECO letter={category} />
-			<a href="#top" id="toTop">Scroll to top</a>
-		</>
+		<ECO letter={category} />
 	);
 }
